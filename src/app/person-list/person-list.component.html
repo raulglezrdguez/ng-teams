@@ -1,10 +1,7 @@
 <div class="row-center">
   <div class="column-center">
+    <app-person-edit></app-person-edit>
     <mat-list>
-      <mat-list-item>
-        <app-person-edit></app-person-edit>
-      </mat-list-item>
-      <mat-divider></mat-divider>
       <mat-list-item *ngFor="let person of persons">
         <a href="#">{{ person.name }} ({{ person.workTime }})</a>
       </mat-list-item>

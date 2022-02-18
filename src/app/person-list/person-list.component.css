@@ -1,7 +1,8 @@
-mat-list-item {
-  background-color: antiquewhite;
+div {
+  background-color: #5c5c5c;
 }
 
-p {
-  color: #000;
+a {
+  color: aliceblue;
+  text-decoration: none;
 }
