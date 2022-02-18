@@ -5,8 +5,8 @@
         <app-person-edit></app-person-edit>
       </mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>
-        <p>The list</p>
+      <mat-list-item *ngFor="let person of persons">
+        <a href="#">{{ person.name }} ({{ person.workTime }})</a>
       </mat-list-item>
     </mat-list>
   </div>
