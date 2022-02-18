@@ -9,17 +9,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.container {
-  border: 1px solid red;
-
-  display: flex;
-
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-}
-
 .row-center {
   border: 1px solid blue;
 
@@ -27,6 +16,17 @@ body {
 
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.row-around {
+  border: 1px solid blue;
+
+  display: flex;
+
+  flex-flow: row wrap;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
 }
@@ -40,4 +40,19 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.column-around {
+  border: 1px solid green;
+
+  display: flex;
+
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
