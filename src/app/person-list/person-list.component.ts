@@ -7,9 +7,13 @@ import { Person } from '../shared/person.model';
   styleUrls: ['./person-list.component.css'],
 })
 export class PersonListComponent implements OnInit {
-  persons: Person[] = [new Person('Joan', 10), new Person('Susan', 20)];
+  persons: Person[] = [];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  newPerson(person: Person) {
+    this.persons.push(person);
+  }
 }

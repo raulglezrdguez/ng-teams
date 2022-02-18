@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Team } from '../team.model';
 
 @Component({
@@ -7,6 +7,9 @@ import { Team } from '../team.model';
   styleUrls: ['./team-list.component.css'],
 })
 export class TeamListComponent implements OnInit {
+  @Output('teamSelected') teamSelected: EventEmitter<Team> =
+    new EventEmitter<Team>();
+
   teams: Team[] = [
     new Team(
       'Development',
@@ -18,4 +21,8 @@ export class TeamListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  setTeamSelected(t: Team) {
+    this.teamSelected.emit(t);
+  }
 }

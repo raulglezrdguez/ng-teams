@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from './team.model';
 
 @Component({
   selector: 'app-teams',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teams.component.css'],
 })
 export class TeamsComponent implements OnInit {
+  selectedTeam: Team | null = null;
+
   constructor() {}
 
   ngOnInit(): void {}

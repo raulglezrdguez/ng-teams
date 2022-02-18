@@ -8,10 +8,14 @@ import { Team } from '../../team.model';
 })
 export class TeamItemComponent implements OnInit {
   @Input('team') team: Team = new Team('', '', '');
-  @Output('teamSelected') teamSelected: EventEmitter<Team> =
-    new EventEmitter<Team>();
+  @Output('teamSelected') teamSelected: EventEmitter<void> =
+    new EventEmitter<void>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  setTeamSelected() {
+    this.teamSelected.emit();
+  }
 }
