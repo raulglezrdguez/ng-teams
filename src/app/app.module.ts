@@ -15,11 +15,8 @@ import { MaterialModule } from './material/material.module';
 import { TeamService } from './teams/team.service';
 import { PersonService } from './person-list/person.service';
 import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: '', component: TeamsComponent },
-  { path: 'person', component: PersonListComponent },
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +33,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
   ],
   providers: [TeamService, PersonService],
   bootstrap: [AppComponent],
