@@ -14,7 +14,12 @@ import { PersonEditComponent } from './person-list/person-edit/person-edit.compo
 import { MaterialModule } from './material/material.module';
 import { TeamService } from './teams/team.service';
 import { PersonService } from './person-list/person.service';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  { path: '', component: TeamsComponent },
+  { path: 'person', component: PersonListComponent },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,7 @@ import { PersonService } from './person-list/person.service';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [TeamService, PersonService],
   bootstrap: [AppComponent],

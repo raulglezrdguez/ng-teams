@@ -12,7 +12,7 @@ export class PersonService {
     if (index !== -1) {
       this._persons[index].workTime += +person.workTime;
     } else {
-      this._persons.push(person);
+      this._persons.push(new Person(person.name, person.workTime));
     }
     this.personListChange.emit(this.persons);
   }
@@ -25,7 +25,7 @@ export class PersonService {
       if (index !== -1) {
         this._persons[index].workTime += +person.workTime;
       } else {
-        this._persons.push(person);
+        this._persons.push(new Person(person.name, person.workTime));
       }
     }
     this.personListChange.emit(this.persons);

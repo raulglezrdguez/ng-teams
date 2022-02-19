@@ -1,9 +1,12 @@
 <div class="container">
-  <app-header (menu)="menu = $event" [title]="title"></app-header>
+  <app-header [title]="title"></app-header>
   <div class="row-around">
     <div class="column-center">
-      <app-teams *ngIf="menu === 'teams'"></app-teams>
-      <app-person-list *ngIf="menu === 'persons'"></app-person-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+<!-- 
+<app-teams *ngIf="menu === 'teams'"></app-teams>
+<app-person-list *ngIf="menu === 'persons'"></app-person-list> -->
