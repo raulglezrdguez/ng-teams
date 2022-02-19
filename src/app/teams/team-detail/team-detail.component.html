@@ -5,9 +5,15 @@
     <img mat-card-lg-image [src]="team?.imagePath" alt="{{ team?.name }}" />
   </mat-card-title-group>
   <mat-card-actions align="end">
-    <button mat-raised-button>Add persons</button>
+    <button mat-raised-button (click)="addToPersonList()">Add persons</button>
     <button mat-raised-button color="accent">Edit</button>
     <button mat-raised-button color="warn">Delete</button>
   </mat-card-actions>
-  <mat-card-content> Team persons </mat-card-content>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let person of team?.persons">
+        {{ person.name }} - ({{ person.workTime }})
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
 </mat-card>

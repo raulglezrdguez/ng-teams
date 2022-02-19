@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../team.model';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-team-detail',
@@ -9,7 +10,13 @@ import { Team } from '../team.model';
 export class TeamDetailComponent implements OnInit {
   @Input('team') team: Team | null = null;
 
-  constructor() {}
+  constructor(private teamService: TeamService) {}
 
   ngOnInit(): void {}
+
+  addToPersonList() {
+    if (this.team && this.team.persons.length > 0) {
+      this.teamService.addTeamPersonsToPersonList(this.team);
+    }
+  }
 }

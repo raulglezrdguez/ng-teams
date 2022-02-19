@@ -1,6 +1,6 @@
 <div class="row-center">
   <div class="column-center">
-    <app-person-edit (newPerson)="newPerson($event)"></app-person-edit>
+    <app-person-edit></app-person-edit>
     <mat-list>
       <mat-list-item *ngFor="let person of persons">
         <a href="#">{{ person.name }} ({{ person.workTime }})</a>

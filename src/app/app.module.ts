@@ -12,6 +12,8 @@ import { TeamListComponent } from './teams/team-list/team-list.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonEditComponent } from './person-list/person-edit/person-edit.component';
 import { MaterialModule } from './material/material.module';
+import { TeamService } from './teams/team.service';
+import { PersonService } from './person-list/person.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { MaterialModule } from './material/material.module';
     FormsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [TeamService, PersonService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

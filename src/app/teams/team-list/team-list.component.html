@@ -6,10 +6,6 @@
 <hr />
 <div class="row-center">
   <div class="column-center">
-    <app-team-item
-      *ngFor="let team of teams"
-      [team]="team"
-      (teamSelected)="setTeamSelected(team)"
-    ></app-team-item>
+    <app-team-item *ngFor="let team of teams" [team]="team"></app-team-item>
   </div>
 </div>
