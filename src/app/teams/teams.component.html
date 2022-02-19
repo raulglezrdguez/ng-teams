@@ -3,12 +3,6 @@
     <app-team-list></app-team-list>
   </div>
   <div class="column-center">
-    <app-team-detail
-      *ngIf="selectedTeam !== null; else infoText"
-      [team]="selectedTeam"
-    ></app-team-detail>
-    <ng-template #infoText>
-      <p>Please select a Team</p>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

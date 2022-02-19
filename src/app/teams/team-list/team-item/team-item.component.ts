@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../../team.model';
-import { TeamService } from '../../team.service';
 
 @Component({
   selector: 'app-team-item',
@@ -10,11 +9,5 @@ import { TeamService } from '../../team.service';
 export class TeamItemComponent implements OnInit {
   @Input('team') team: Team = new Team('', '', '', []);
 
-  constructor(private teamService: TeamService) {}
-
   ngOnInit(): void {}
-
-  setTeamSelected() {
-    this.teamService.teamSelected.emit(this.team);
-  }
 }

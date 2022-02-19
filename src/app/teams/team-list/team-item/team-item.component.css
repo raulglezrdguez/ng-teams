@@ -1,3 +1,16 @@
 a {
   text-decoration: none;
 }
+
+a :hover {
+  cursor: pointer;
+}
+
+mat-card {
+  margin: 1rem;
+  width: 300px;
+}
+
+.active {
+  background-color: brown;
+}

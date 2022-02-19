@@ -7,10 +7,16 @@ import { Team } from './team.model';
 export class TeamService {
   teamSelected = new EventEmitter<Team>();
 
-  teams: Team[] = [
+  _teams: Team[] = [
     new Team(
       'Development',
       'Develop with mern stack',
+      'https://media.istockphoto.com/photos/sea-of-hands-picture-id857146092',
+      [new Person('Frontend', 10)]
+    ),
+    new Team(
+      'Backend',
+      'Develop with nestjs',
       'https://media.istockphoto.com/photos/sea-of-hands-picture-id857146092',
       [new Person('Backend', 10)]
     ),
@@ -18,7 +24,16 @@ export class TeamService {
 
   constructor(private personService: PersonService) {}
 
+  get teams() {
+    return this._teams.slice();
+  }
+
   addTeamPersonsToPersonList(team: Team) {
     this.personService.addPersons(team.persons);
+  }
+
+  getTeamById(id: string) {
+    const team = this.teams.find((t) => t.id === id);
+    return team;
   }
 }

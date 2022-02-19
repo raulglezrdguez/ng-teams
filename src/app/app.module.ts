@@ -16,6 +16,8 @@ import { TeamService } from './teams/team.service';
 import { PersonService } from './person-list/person.service';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { TeamsStartComponent } from './teams/teams-start/teams-start.component';
+import { TeamEditComponent } from './teams/team-edit/team-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
     TeamItemComponent,
     PersonListComponent,
     PersonEditComponent,
+    TeamsStartComponent,
+    TeamEditComponent,
   ],
   imports: [
     BrowserModule,
