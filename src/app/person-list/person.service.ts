@@ -1,8 +1,8 @@
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Person } from '../shared/person.model';
 
 export class PersonService {
-  personListChange = new EventEmitter<Person[]>();
+  personListChange = new Subject<Person[]>();
   private _persons: Person[] = [];
 
   addPerson(person: Person) {
@@ -14,7 +14,7 @@ export class PersonService {
     } else {
       this._persons.push(new Person(person.name, person.workTime));
     }
-    this.personListChange.emit(this.persons);
+    this.personListChange.next(this.persons);
   }
 
   addPersons(persons: Person[]) {
@@ -28,7 +28,7 @@ export class PersonService {
         this._persons.push(new Person(person.name, person.workTime));
       }
     }
-    this.personListChange.emit(this.persons);
+    this.personListChange.next(this.persons);
   }
 
   get persons() {
@@ -37,6 +37,6 @@ export class PersonService {
 
   clearList() {
     this._persons.splice(0, this._persons.length);
-    this.personListChange.emit(this.persons);
+    this.personListChange.next(this.persons);
   }
 }

@@ -1,12 +1,10 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { PersonService } from '../person-list/person.service';
 import { Person } from '../shared/person.model';
 import { Team } from './team.model';
 
 @Injectable()
 export class TeamService {
-  teamSelected = new EventEmitter<Team>();
-
   _teams: Team[] = [
     new Team(
       'Development',
