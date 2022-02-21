@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Team } from '../team.model';
 import { TeamService } from '../team.service';
 
@@ -13,7 +13,8 @@ export class TeamDetailComponent implements OnInit {
 
   constructor(
     private teamService: TeamService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +33,13 @@ export class TeamDetailComponent implements OnInit {
   addToPersonList() {
     if (this.team && this.team.persons.length > 0) {
       this.teamService.addTeamPersonsToPersonList(this.team);
+    }
+  }
+
+  deleteTeam() {
+    if (this.team) {
+      this.teamService.deleteTeam(this.team);
+      this.router.navigate(['/teams']);
     }
   }
 }

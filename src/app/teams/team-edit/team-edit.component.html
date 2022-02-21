@@ -1,7 +1,16 @@
 <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
   <div class="row-around">
-    <button mat-raised-button type="submit" color="primary">Save</button>
-    <button mat-raised-button type="button" color="warn">Cancel</button>
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!teamForm.valid"
+    >
+      Save
+    </button>
+    <button mat-raised-button type="button" color="warn" (click)="onCancel()">
+      Cancel
+    </button>
   </div>
   <div class="column-center">
     <mat-form-field appearance="outline">
@@ -37,21 +46,50 @@
         placeholder="Team image"
         required
         formControlName="imagePath"
+        #imagePath
       />
     </mat-form-field>
-    <img mat-card-lg-image [src]="" alt="" />
+    <img mat-card-lg-image [src]="imagePath.value" alt="" />
+  </div>
+  <div class="column-center" formArrayName="persons">
+    <div
+      class="row-around"
+      *ngFor="let personCtrl of controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="name"
+          name="name"
+          id="name"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Work time</mat-label>
+        <input
+          type="number"
+          matInput
+          formControlName="workTime"
+          name="workTime"
+          id="workTime"
+        />
+      </mat-form-field>
+      <button
+        mat-icon-button
+        color="warn"
+        type="button"
+        (click)="onDeletePerson(i)"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
   </div>
   <div class="row-around">
-    <mat-form-field appearance="outline">
-      <mat-label>Name</mat-label>
-      <input type="text" matInput />
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Work time</mat-label>
-      <input type="number" matInput />
-    </mat-form-field>
-    <button mat-icon-button color="warn">
-      <mat-icon>close</mat-icon>
+    <button mat-icon-button color="primary" type="button" (click)="addPerson()">
+      <mat-icon>person_add</mat-icon>
     </button>
   </div>
 </form>
