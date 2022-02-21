@@ -3,7 +3,9 @@
     <app-person-edit></app-person-edit>
     <mat-list>
       <mat-list-item *ngFor="let person of persons">
-        <span>{{ person.name }} ({{ person.workTime }})</span>
+        <a (click)="editPerson(person.name)"
+          >{{ person.name }} ({{ person.workTime }})</a
+        >
       </mat-list-item>
     </mat-list>
   </div>

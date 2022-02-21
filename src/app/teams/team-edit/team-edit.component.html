@@ -1,1 +1,57 @@
-<p>team-edit works!</p>
+<form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+  <div class="row-around">
+    <button mat-raised-button type="submit" color="primary">Save</button>
+    <button mat-raised-button type="button" color="warn">Cancel</button>
+  </div>
+  <div class="column-center">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        id="name"
+        name="name"
+        formControlName="name"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea
+        type="text"
+        rows="3"
+        matInput
+        id="description"
+        name="description"
+        placeholder="Team description"
+        required
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Image</mat-label>
+      <input
+        type="text"
+        matInput
+        id="imagePath"
+        name="imagePath"
+        placeholder="Team image"
+        required
+        formControlName="imagePath"
+      />
+    </mat-form-field>
+    <img mat-card-lg-image [src]="" alt="" />
+  </div>
+  <div class="row-around">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Work time</mat-label>
+      <input type="number" matInput />
+    </mat-form-field>
+    <button mat-icon-button color="warn">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</form>

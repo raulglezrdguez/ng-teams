@@ -2,8 +2,9 @@ import { Subject } from 'rxjs';
 import { Person } from '../shared/person.model';
 
 export class PersonService {
-  personListChange = new Subject<Person[]>();
   private _persons: Person[] = [];
+  personListChange = new Subject<Person[]>();
+  editPerson = new Subject<string>();
 
   addPerson(person: Person) {
     const index = this._persons.findIndex(
@@ -35,8 +36,18 @@ export class PersonService {
     return this._persons.slice();
   }
 
+  getPerson(name: string) {
+    const person = this.persons.find((p) => p.name === name);
+    return person;
+  }
+
   clearList() {
     this._persons.splice(0, this._persons.length);
+    this.personListChange.next(this.persons);
+  }
+
+  deletePerson(name: string) {
+    this._persons = this.persons.filter((p) => p.name !== name);
     this.personListChange.next(this.persons);
   }
 }

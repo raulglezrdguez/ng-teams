@@ -25,4 +25,8 @@ export class PersonListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.personListChangeSubscription?.unsubscribe();
   }
+
+  editPerson(name: string) {
+    this.personService.editPerson.next(name);
+  }
 }

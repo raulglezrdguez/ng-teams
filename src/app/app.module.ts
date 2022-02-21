@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamsComponent } from './teams/teams.component';
 import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
 import { TeamItemComponent } from './teams/team-list/team-item/team-item.component';
@@ -14,7 +14,6 @@ import { PersonEditComponent } from './person-list/person-edit/person-edit.compo
 import { MaterialModule } from './material/material.module';
 import { TeamService } from './teams/team.service';
 import { PersonService } from './person-list/person.service';
-import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { TeamsStartComponent } from './teams/teams-start/teams-start.component';
 import { TeamEditComponent } from './teams/team-edit/team-edit.component';
@@ -36,6 +35,7 @@ import { TeamEditComponent } from './teams/team-edit/team-edit.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     AppRoutingModule,
   ],
